@@ -1,40 +1,21 @@
 #include<stdio.h>
 int main(void)
 {
-  int n;
-  printf("Enter the length of one arm: ");
-  scanf("%d",&n);
-  for(int i=1;i<=2*n-1;i++)
+  int year;
+  printf("Enter the year: ");
+  scanf("%d",&year);
+  if(year%4==0)
   {
-    for(int j=1;j<=2*n-1;j++)
+    if(year%100==0)
     {
-      if(i<n)
-      {
-        if(j==1)
-          printf("*\t");
-        else if(j==n)
-          printf("*\t");
-        else if(j>n&&i==1)
-          printf("*\t");          
-        else
-          printf("\t");
-      }
-      if(i==n)
-      {
-        printf("*\t");
-      }
-      if(i>n)
-      {
-        if(j==2*n-1)
-          printf("*");
-        else if(j==n)
-          printf("*\t");
-        else if(j<n&&i==2*n-1)
-          printf("*\t");
-        else
-          printf("\t");
-      }
+      if(year%400==0)
+        printf("It is a leap year.");
+      else
+        printf("It is not a leap year.");
     }
-    printf("\n");
+    else
+      printf("It is a leap year.");
   }
+  else
+    printf("It is not a leap year.");
 }
