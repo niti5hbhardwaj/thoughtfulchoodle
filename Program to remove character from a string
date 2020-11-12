@@ -23,5 +23,5 @@ int main(void)
     else
       i++;
   }
-  puts(str);
+  printf("The updated string is: %s",str);
 }
