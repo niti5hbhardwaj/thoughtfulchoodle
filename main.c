@@ -1,21 +1,27 @@
 #include<stdio.h>
+#include<string.h>
 int main(void)
 {
-  int year;
-  printf("Enter the year: ");
-  scanf("%d",&year);
-  if(year%4==0)
+  char str[50],c;
+  int i=0;
+  printf("Enter a string: ");
+  scanf("%[^\n]%*c",str);
+  printf("Enter the character you want to remove: ");
+  scanf("%c",&c);
+  while(str[i]!='\0')
   {
-    if(year%100==0)
+    if(str[i]==c)
     {
-      if(year%400==0)
-        printf("It is a leap year.");
-      else
-        printf("It is not a leap year.");
+      for(int j=i;j<strlen(str);j++)
+      {
+        if(j<strlen(str)-1)
+          str[j]=str[j+1];
+        else
+          str[j]='\0';
+      }
     }
     else
-      printf("It is a leap year.");
+      i++;
   }
-  else
-    printf("It is not a leap year.");
+  puts(str);
 }
